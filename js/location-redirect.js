@@ -10,15 +10,9 @@ fetch('https://api.ipify.org/?format=json')
     // Step 2: Send IP to Lambda
     fetch(`https://doxtmrsyif6ypa3d4afjescabq0ouzkq.lambda-url.ap-south-1.on.aws?ip=${userIp}`)
       .then(res => res.json())
-      .then(lambdaData => {
-        // Lambda returns city in body string → parse it
-        let data;
-        try {
-          data = JSON.parse(lambdaData.body);  // ← important
-        } catch (e) {
-          console.error("Failed to parse Lambda body:", lambdaData.body);
-          return;
-        }
+      .then(data => {
+        // If Lambda directly returns: { city: "Delhi", region: "...", ... }
+        console.log("Lambda response:", data);
 
         const cityMap = {
           "new delhi": "delhi",
