@@ -28,8 +28,9 @@ fetch('https://api.ipify.org/?format=json')
         console.log("Detected City:", city);
 
         if (citySlug) {
-          console.log("Redirecting to:", citySlug);
-          window.location.href = `${citySlug}.html`;
+          const targetUrl = `${window.location.origin}/${citySlug}.html`;
+          console.log("Redirecting to:", targetUrl);
+          window.location.href = targetUrl;
         } else {
           console.warn("City not in map:", city);
         }
