@@ -10,7 +10,7 @@ fetch('https://ipinfo.io/json?token=971e67675db5c4')
         "dehradun": "dehradun",
         "gurgaon": "gurgaon",
         "noida": "noida",
-        "alighar": "alighar",
+        "alīgarh": "alīgarh",
         "haridwar": "haridwar"
     };
 
