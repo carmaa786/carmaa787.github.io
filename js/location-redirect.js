@@ -10,7 +10,8 @@ fetch('https://ipapi.co/json/')
       "dehradun": "dehradun",
       "gurgaon": "gurgaon",
       "noida": "noida",
-      "alighar": "alighar"
+      "alighar": "alighar",
+      "haridwar": "haridwar"
     };
 
     const userCity = data.city.toLowerCase().trim();
