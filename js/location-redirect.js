@@ -1,25 +1,28 @@
-// City slug mapping (customize based on your supported cities)
-const cityMap = {
-  "new delhi": "delhi",
-  "delhi": "delhi",
-  "dehradun": "dehradun",
-  "gurgaon": "gurgaon",
-  "noida": "noida",
-  "alighar": "alighar"
-};
+console.log("Location script started...");
 
 fetch('https://ipapi.co/json/')
   .then(response => response.json())
   .then(data => {
+    console.log("City detected:", data.city);
+    const cityMap = {
+       "new delhi": "delhi",
+      "delhi": "delhi",
+      "dehradun": "dehradun",
+      "gurgaon": "gurgaon",
+      "noida": "noida",
+      "alighar": "alighar"
+    };
+
     const userCity = data.city.toLowerCase().trim();
     const citySlug = cityMap[userCity];
 
     if (citySlug) {
-      window.location.href = `/${citySlug}.html`;
+      console.log("Redirecting to:", citySlug);
+      window.location.href = `${citySlug}.html`;
     } else {
-      console.log("City not mapped, staying on homepage.");
+      console.warn("City not in map:", userCity);
     }
   })
   .catch(error => {
-    console.error("Location detection failed:", error);
+    console.error("Error fetching location:", error);
   });
