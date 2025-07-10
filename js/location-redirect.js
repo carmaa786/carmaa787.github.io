@@ -11,7 +11,6 @@ fetch('https://api.ipify.org/?format=json')
     fetch(`https://doxtmrsyif6ypa3d4afjescabq0ouzkq.lambda-url.ap-south-1.on.aws?ip=${userIp}`)
       .then(res => res.json())
       .then(data => {
-        // If Lambda directly returns: { city: "Delhi", region: "...", ... }
         console.log("Lambda response:", data);
 
         const cityMap = {
