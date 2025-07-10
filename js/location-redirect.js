@@ -1,6 +1,6 @@
 console.log("Location script started...");
 
-fetch('https://ipapi.co/json/')
+fetch('https://ipinfo.io/json?token=971e67675db5c4')
   .then(response => response.json())
   .then(data => {
     console.log("City detected:", data.city);
