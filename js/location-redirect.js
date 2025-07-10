@@ -4,7 +4,8 @@ const cityMap = {
   "delhi": "delhi",
   "dehradun": "dehradun",
   "gurgaon": "gurgaon",
-  "noida": "noida"
+  "noida": "noida",
+  "alighar": "alighar"
 };
 
 fetch('https://ipapi.co/json/')
