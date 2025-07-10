@@ -15,7 +15,9 @@ fetch('https://ipinfo.io/json?token=971e67675db5c4')
     };
 
     const userCity = data.city.toLowerCase().trim();
+    console.log(userCity)
     const citySlug = cityMap[userCity];
+    console.log(citySlug)
 
     if (citySlug) {
       console.log("Redirecting to:", citySlug);
